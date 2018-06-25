@@ -22,7 +22,7 @@
 <div class="container">
     <!--Content Section Start -->
     <div class="row">
-        <div class="box animation flipInX">
+        <div class="box animation flipInX" style="border-radius: 15%">
             <div class="box1">
             <img src="<?php echo e(asset('assets/images/josh-new.png')); ?>" alt="logo" class="img-responsive mar">
             <h3 class="text-primary">Log In</h3>
@@ -50,26 +50,26 @@
 
                     </div>
                     <input type="submit" class="btn btn-block btn-primary" value="Log In">
-                    Don't have an account? <a href="<?php echo e(route('register')); ?>"><strong> Sign Up</strong></a>
+                    
                 </form>
                 <br/>
-                <div class="text-center">
-                    <p>--OR--</p>
-                    <p>Login with</p>
-                    <a href="<?php echo e(url('/facebook')); ?>" class="social"><i class=" fa fa-facebook"></i> Facebook</a>
-
-                    <a href="<?php echo e(url('/google')); ?>" class="social text-danger"><i class=" fa fa-google-plus"></i> Google</a>
+                
+                    
+                    
+                    
 
                     
 
-                    <a href="<?php echo e(url('/linkedin')); ?>" class="social"><i class=" fa fa-linkedin"></i> LinkedIn</a>
-                </div>
+                    
+
+                    
+                
 
             </div>
-            <br>
-        <div class="bg-light animation flipInX">
-            <a href="<?php echo e(route('forgot-password')); ?>" id="forgot_pwd_title">Forgot Password?</a>
-        </div>
+            
+        
+            
+        
         </div>
     </div>
     <!-- //Content Section End -->

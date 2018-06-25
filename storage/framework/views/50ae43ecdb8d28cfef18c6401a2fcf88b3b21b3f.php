@@ -13,7 +13,7 @@
     <![endif]-->
     <title>
         <?php $__env->startSection('title'); ?>
-            | Welcome to Beacon Frontend
+            | Welcome to Beacon Investment
         <?php echo $__env->yieldSection(); ?>
     </title>
     <!--global css starts-->
@@ -80,7 +80,8 @@
         </div>
         <div class="collapse navbar-collapse" id="collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li <?php echo (Request::is('/') ? 'class="active"' : ''); ?>><a href="<?php echo e(route('home')); ?>"> Home</a>
+                
+                <li <?php echo (Request::is('/') ? 'class="active"' : ''); ?>><a href="<?php echo e(URL('https://www.beaconinvestment.org/')); ?>"> Home</a>
                 </li>
                 
                 

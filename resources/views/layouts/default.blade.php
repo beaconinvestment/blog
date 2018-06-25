@@ -13,7 +13,7 @@
     <![endif]-->
     <title>
         @section('title')
-            | Welcome to Beacon Frontend
+            | Welcome to Beacon Investment
         @show
     </title>
     <!--global css starts-->
@@ -80,7 +80,8 @@
         </div>
         <div class="collapse navbar-collapse" id="collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="{{ route('home') }}"> Home</a>
+                {{--<li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="{{ route('home') }}"> Home</a>--}}
+                <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="{{ URL('https://www.beaconinvestment.org/') }}"> Home</a>
                 </li>
                 {{--<li class="dropdown {!! (Request::is('typography') || Request::is('advancedfeatures') || Request::is('grid') ? 'active' : '') !!}">--}}
                 {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Features</a>--}}

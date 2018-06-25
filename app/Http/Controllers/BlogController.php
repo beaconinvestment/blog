@@ -7,6 +7,7 @@ use App\BlogComment;
 use App\Http\Requests\BlogCommentRequest;
 use Response;
 use Sentinel;
+use DB;
 
 
 class BlogController extends JoshController
@@ -28,12 +29,17 @@ class BlogController extends JoshController
     {
         // Grab all the blogs
         $blogs = Blog::latest()->paginate(5);
-
         $tags = $this->tags;
         // Show the page
 
-        return view('blog', compact('blogs', 'tags'));
+        //Show most recent 3 blog posts
+//        $recents = $blogs->sortByDecs('id', 'DESC')->first();
+        $recents= Blog::orderBy('created_at','desc')->take(3)->get();
+//        $recents = Blog::where('simple',true)->orderBy('created_at','desc')->skip(1)->take(1)->get();
+
+        return view('blog', compact('blogs', 'tags','recents'));
     }
+
 
     /**
      * @param string $slug
@@ -43,13 +49,15 @@ class BlogController extends JoshController
     {
 
         $blog = Blog::where('slug', $slug)->first();
+
         if ($blog) {
             $blog->increment('views');
         } else {
             abort('404');
         }
+        $recents= Blog::orderBy('created_at','desc')->take(3)->get();
         // Show the page
-        return view('blogitem', compact('blog'));
+        return view('blogitem', compact('blog','recents'));
     }
 
     /**
@@ -60,7 +68,8 @@ class BlogController extends JoshController
     {
         $blogs = Blog::withAnyTags($tag)->paginate(5);
         $tags = $this->tags;
-        return view('blog', compact('blogs', 'tags'));
+        $recents= Blog::orderBy('created_at','desc')->take(3)->get();
+        return view('blog', compact('blogs', 'tags','recents'));
     }
 
     /**
